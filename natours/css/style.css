@@ -41,4 +41,15 @@ body {
   clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%); /*clock-wise*/
 
   /*https://bennettfeely.com/clippy/ for click path polygon*/
+
+  position: relative;
+}
+.logo-box {
+  position: absolute;
+  left: 40px;
+  top: 40px;
+}
+
+.logo {
+  height: 35px;
 }
