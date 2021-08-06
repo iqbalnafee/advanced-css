@@ -6,3 +6,21 @@ Medium green: #55c57a
 Dark green: #28b485
 
 */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+
+  /*box-sizing: border-box does not added padding and border to the actual height and width*/
+}
+
+body {
+  font-family: 'Lato' sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.7; /*element will be 1.7 times higher*/
+  color: #777; /*font color*/
+
+  /*inherited by other css fonts*/
+}
