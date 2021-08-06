@@ -76,8 +76,11 @@ body {
   letter-spacing: 35px;
 
   animation-name: moveInLeft;
-  animation-duration: 3s;
-  animation-delay: 3s;
+  animation-duration: 2s;
+
+  animation-iteration-count: 3;
+
+  /* animation-delay: 3s; */
 }
 
 .heading-primary-sub {
