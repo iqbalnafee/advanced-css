@@ -134,6 +134,7 @@ body {
   margin-top: 10px;
   border-radius: 100px;
   transition: all 0.2s;
+  position: relative;
 }
 
 .btn:hover {
@@ -150,3 +151,26 @@ body {
   font-weight: bold;
 }
 /*btn:link is called sudo class. link means normal state i.e when the button is not clicked yet*/
+
+/*pseudo element*/
+/*make a virtual button*/
+.btn::after {
+  content: '';
+  display: inline-block;
+  height: 100%;
+  width: 100%;
+  border-radius: 100px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1; /*define the position if elements is reside on another*/
+  transition: all 0.4s;
+}
+.btn-white::after {
+  background-color: #fff;
+}
+.btn:hover::after {
+  /* transform: scale(1.5); */
+  transform: scaleX(1.5) scaleY(1.4);
+  opacity: 0;
+}
