@@ -135,6 +135,7 @@ body {
   border-radius: 100px;
   transition: all 0.2s;
   position: relative;
+  animation: moveInBottom 2s ease-in;
 }
 
 .btn:hover {
@@ -173,4 +174,16 @@ body {
   /* transform: scale(1.5); */
   transform: scaleX(1.5) scaleY(1.4);
   opacity: 0;
+}
+
+@keyframes moveInBottom {
+  0% {
+    opacity: 0;
+    transform: translateY(30px); /*from original position - (minus) 100px */
+  }
+
+  100% {
+    opacity: 1;
+    transform: translate(0);
+  }
 }
