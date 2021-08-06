@@ -45,13 +45,23 @@ body {
   position: relative;
 }
 .logo-box {
-  position: absolute;
+  position: absolute; /*depends on .header parent*/
   left: 40px;
   top: 40px;
 }
 
 .logo {
   height: 35px;
+}
+
+.text-box {
+  position: absolute;
+  top: 40%; /*depends on parent */
+  left: 50%; /*depends on parent*/
+  transform: translate(
+    -50%,
+    -50%
+  ); /*percentage depends on its own element is thar .text-box*/
 }
 
 .heading-primary {
@@ -64,11 +74,26 @@ body {
   font-size: 60px;
   font-weight: 400;
   letter-spacing: 35px;
+
+  animation-name: moveInLeft;
+  animation-duration: 3s;
 }
 
 .heading-primary-sub {
   display: block;
   font-size: 20px;
-  font-weight: 700;
+  font-weight: 100;
   letter-spacing: 17.4px;
+}
+
+@keyframes moveInLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-100px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translate(0);
+  }
 }
