@@ -21,6 +21,7 @@ body {
   font-size: 16px;
   line-height: 1.7; /*element will be 1.7 times higher*/
   color: #777; /*font color*/
+  padding: 30px;
 
   /*inherited by other css fonts*/
 }
@@ -36,4 +37,8 @@ body {
     url('../img/hero.jpg');
   background-size: cover; /*this will fit the whote view port or window*/
   background-position: top; /*bottom crops and top remain same*/
+
+  clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%); /*clock-wise*/
+
+  /*https://bennettfeely.com/clippy/ for click path polygon*/
 }
