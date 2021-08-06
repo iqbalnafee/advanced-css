@@ -132,17 +132,21 @@ body {
   padding: 15px 40px;
   display: inline-block;
   margin-top: 10px;
+  border-radius: 100px;
+  transition: all 0.2s;
 }
 
 .btn:hover {
   transform: translateY(-3px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5); /*0 shadow in x axis, 10px shdow in bottom direction y axis, 20px blurr added to the shadow, rgba 0,0,0 means black color with 20% opacity*/
 }
 .btn:active {
   transform: translateY(-1px);
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.5);
 }
 .btn-white {
   background-color: #fff;
-  color: #777;
+  color: #000;
   font-weight: bold;
 }
 /*btn:link is called sudo class. link means normal state i.e when the button is not clicked yet*/
