@@ -28,4 +28,6 @@ body {
 .header {
   height: 95vh; /*95% of view port at each point*/
   /*A viewport represents the area in computer graphics being currently viewed. it is generally the same as the browser window*/
+  background-image: url('../img/hero.jpg');
+  background-size: cover; /*this will fit the whote view port or window*/
 }
