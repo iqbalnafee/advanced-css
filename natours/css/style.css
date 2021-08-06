@@ -62,11 +62,13 @@ body {
     -50%,
     -50%
   ); /*percentage depends on its own element is thar .text-box*/
+  text-align: center;
 }
 
 .heading-primary {
   color: #fff;
   text-transform: uppercase;
+  backface-visibility: hidden;
 }
 
 .heading-primary-main {
@@ -122,3 +124,25 @@ body {
     transform: translate(0);
   }
 }
+
+.btn:link,
+.btn:visited {
+  text-transform: uppercase;
+  text-decoration: none;
+  padding: 15px 40px;
+  display: inline-block;
+  margin-top: 10px;
+}
+
+.btn:hover {
+  transform: translateY(-3px);
+}
+.btn:active {
+  transform: translateY(-1px);
+}
+.btn-white {
+  background-color: #fff;
+  color: #777;
+  font-weight: bold;
+}
+/*btn:link is called sudo class. link means normal state i.e when the button is not clicked yet*/
