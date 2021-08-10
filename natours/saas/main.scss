@@ -1,0 +1,211 @@
+/*
+COLORS:
+
+Light green: #7ed56f
+Medium green: #55c57a
+Dark green: #28b485
+
+*/
+
+$color-primary: #55c57a;
+$color-primary-light: #7ed56f;
+$color-primary-dark: #28b485;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+
+  /*box-sizing: border-box does not added padding and border to the actual height and width*/
+}
+
+/*root element*/
+html {
+  /* font-size: 10px; */
+  font-size: 62.5%;
+  /*rem will be calculated on 10px*/
+
+  /*if user change default font size from 16 to 20 px then our root font size will be 12.5px*/
+}
+
+body {
+  font-family: 'Lato' sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.7; /*element will be 1.7 times higher*/
+  color: #777; /*font color*/
+  /* padding: 30px; */
+  padding: 3rem;
+
+  /*inherited by other css fonts*/
+}
+
+.header {
+  height: 100vh; /*95% of view port at each point*/
+  /*A viewport represents the area in computer graphics being currently viewed. it is generally the same as the browser window*/
+  background-image: linear-gradient(
+      to right bottom,
+      rgba($color-primary-light, 0.61),
+      #28b48565
+    ),
+    url('../img/hero.jpg');
+  background-size: cover; /*this will fit the whote view port or window*/
+  background-position: top; /*bottom crops and top remain same*/
+
+  clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%); /*clock-wise*/
+
+  /*https://bennettfeely.com/clippy/ for click path polygon*/
+
+  position: relative;
+}
+.logo-box {
+  position: absolute; /*depends on .header parent*/
+  /* left: 40px;
+    top: 40px; */
+
+  left: 4rem;
+  top: 4rem;
+}
+
+.logo {
+  /* height: 35px; */
+  height: 3.5rem;
+}
+
+.text-box {
+  position: absolute;
+  top: 40%; /*depends on parent */
+  left: 50%; /*depends on parent*/
+  transform: translate(
+    -50%,
+    -50%
+  ); /*percentage depends on its own element is thar .text-box*/
+  text-align: center;
+}
+
+.heading-primary {
+  color: #fff;
+  text-transform: uppercase;
+  backface-visibility: hidden;
+}
+
+.heading-primary-main {
+  display: block;
+  /* font-size: 60px; */
+  font-size: 6rem;
+  font-weight: 400;
+  /* letter-spacing: 35px; */
+  letter-spacing: 3.5rem;
+
+  animation-name: moveInLeft;
+  animation-duration: 2s;
+  animation-timing-function: ease-out;
+
+  /* animation-delay: 3s; 
+    animation-iteration-count: 3;*/
+}
+
+.heading-primary-sub {
+  display: block;
+  /* font-size: 20px; */
+  font-size: 2rem;
+  font-weight: 100;
+  /* letter-spacing: 17.4px; */
+  letter-spacing: 1.74rem;
+  animation: moveInRight 2s ease-out;
+}
+
+@keyframes moveInLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-10rem); /*original position - 100px */
+  }
+
+  80% {
+    transform: translateX(2rem); /*original position + 20px*/
+  }
+
+  100% {
+    opacity: 1;
+    transform: translate(0);
+  }
+}
+
+@keyframes moveInRight {
+  0% {
+    opacity: 0;
+    transform: translateX(10rem); /*original position - 100px */
+  }
+
+  80% {
+    transform: translateX(-20rem); /*original position + 20px*/
+  }
+
+  100% {
+    opacity: 1;
+    transform: translate(0);
+  }
+}
+
+.btn:link,
+.btn:visited {
+  text-transform: uppercase;
+  text-decoration: none;
+  padding: 1.5rem 4rem;
+  display: inline-block;
+  margin-top: 1rem;
+  border-radius: 10rem;
+  transition: all 0.2s;
+  position: relative;
+  animation: moveInBottom 2s ease-in;
+}
+
+.btn:hover {
+  transform: translateY(-0.3rem);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5); /*0 shadow in x axis, 10px shdow in bottom direction y axis, 20px blurr added to the shadow, rgba 0,0,0 means black color with 20% opacity*/
+}
+.btn:active {
+  transform: translateY(-0.1rem);
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.5);
+}
+.btn-white {
+  background-color: #fff;
+  color: #000;
+  font-weight: bold;
+}
+/*btn:link is called sudo class. link means normal state i.e when the button is not clicked yet*/
+
+/*pseudo element*/
+/*make a virtual button*/
+.btn::after {
+  content: '';
+  display: inline-block;
+  height: 100%;
+  width: 100%;
+  border-radius: 10rem;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1; /*define the position if elements is reside on another*/
+  transition: all 0.4s;
+}
+.btn-white::after {
+  background-color: #fff;
+}
+.btn:hover::after {
+  /* transform: scale(1.5); */
+  transform: scaleX(1.5) scaleY(1.4);
+  opacity: 0;
+}
+
+@keyframes moveInBottom {
+  0% {
+    opacity: 0;
+    transform: translateY(3rem); /*from original position - (minus) 100px */
+  }
+
+  100% {
+    opacity: 1;
+    transform: translate(0);
+  }
+}
