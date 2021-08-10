@@ -11,6 +11,8 @@ $color-primary: #55c57a;
 $color-primary-light: #7ed56f;
 $color-primary-dark: #28b485;
 
+$color-grey: #777;
+
 * {
   margin: 0;
   padding: 0;
@@ -33,7 +35,7 @@ body {
   font-weight: 400;
   font-size: 16px;
   line-height: 1.7; /*element will be 1.7 times higher*/
-  color: #777; /*font color*/
+  color: $color-grey; /*font color*/
   /* padding: 30px; */
   padding: 3rem;
 

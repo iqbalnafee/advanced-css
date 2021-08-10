@@ -6,4 +6,8 @@
 
 4. npm install // to genarate/regenerate node_modules folder from package.json
 
-5. 3. npm uninstall jquery --save // to uninstall jquery
+5. npm uninstall jquery --save // to uninstall jquery
+
+6. npm run compile:sass // to compile main.scss to style.css
+
+7. "compile:sass": "node-sass saas/main.scss css/style.css -w" // whnever we make any changes to main.scss it automatically convert to style.css
