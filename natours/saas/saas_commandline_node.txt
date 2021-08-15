@@ -1,6 +1,6 @@
 1. npm init // to create package.json which will contain all the declarations of installed packages.
 
-2. npm install saas --save-dev// to install saas as developer dependencies. This mean we use node package saas to develop our project
+2. npm install sass --save-dev// to install saas as developer dependencies. This mean we use node package saas to develop our project
 
 3. npm install jquery --save // --save for viewing in package.json
 
